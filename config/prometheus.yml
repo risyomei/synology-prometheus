@@ -36,3 +36,9 @@ scrape_configs:
         regex: (.*)
         replacement: ${1}:9116
         target_label: __address__
+  - job_name: 'script-exporter'
+    metrics_path: /probe
+    params:
+      script: ['cloudcat']
+    static_configs:
+      - targets: ["nas.meleeh.com:9469"]
