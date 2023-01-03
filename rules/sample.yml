@@ -1,10 +1,10 @@
 groups:
-- name: sample-alerts
+- name: Alerting for Cloudcat
   rules:
-  - alert: node down
-    expr: 0
+  - alert: Cloudcat is going to expire
+    expr: script_exit_code{script="cloudcat"} != 0
     labels:
       severity: critical
-      service: linux
+      service: cloudcat is expiring
     annotations:
       summary: node down
