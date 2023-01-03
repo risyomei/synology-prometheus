@@ -1,10 +1,10 @@
 groups:
 - name: Alerting for Cloudcat
   rules:
-  - alert: Cloudcat is going to expire
+  - alert: cloudcat is going to expire
     expr: script_exit_code{script="cloudcat"} != 0
     labels:
       severity: critical
-      service: cloudcat is expiring
+      service: cloudcat
     annotations:
-      summary: node down
+      summary: Cloudcat is expiring, go extend now
